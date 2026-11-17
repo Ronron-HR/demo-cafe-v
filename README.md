@@ -23,5 +23,21 @@ CSS-variabler øverst i `style.css`. Rød er `#BC3820` (mørkere end i mockuppen
 
 ## Kendte mangler
 - Ikke testet på rigtig telefon, kun i headless Chrome (390 px) og et almindeligt Chrome-vindue.
-- Fastgjort ("pinned") sektion og Lenis er kun set via kode, ikke afprøvet med rigtig scrolling.
-- Ingen GitHub-repo og intet offentligt deploy, før Ronny godkender det.
+- Den fastgjorte tidslinje og Lenis er afprøvet i Chrome, men ikke på en rigtig telefon.
+- Udgivet på GitHub Pages efter Ronnys ordre 17. november 2026. Linket må ikke deles offentligt.
+
+## Hjemmeside (`/hjemmeside/`)
+Selvstændig demo-hjemmeside til Café V, bygget i samme retning (varm og taktil) og med samme variabler som bestillingen (`../style.css`).
+- `hjemmeside/index.html`: forside med dagens ret, nedtælling til kl. 12, tidslinje kl. 12 → 16.30, vandret opslagstavle med fast-på-kortet-retter, om Café V, åbningstider og kontakt. Knappen "Bestil dagens ret" går til `../index.html`.
+- `hjemmeside/om.html`: om Viruphuset.
+- `data.js` (i roden): fælles oplysninger (priser, åbningstider, kontakt). Hjemmesiden læser den. Bestillingsdemoen (`index.html`) har dagens ret skrevet direkte i HTML og er ikke koblet til filen endnu.
+- Dagens ret findes kun tirsdag–torsdag ifølge stedets side. På andre dage viser hjemmesiden "Næste dagens ret". Bestillingsdemoen viser den stadig alle dage.
+
+### Kilder (hentet 17. november 2026)
+- https://viruphuset.dk/cafe-v/ : åbningstider, dagens ret (95,-, tirs–tors, serveres fra 16.30), forudbestilling på mail senest kl. 12.00 (ikke telefon, sms, Messenger), faste retter og priser, selskaber, kontakt.
+- https://viruphuset.dk : adresse, telefon, e-mail, drift af Fonden Multihus Hjortshøj, nævnelsen af "Hjorten – Byens filmklub".
+- https://viruphuset.dk/events/strik-i-viruphuset/ : Strik i Viruphuset, onsdage 10–12, gratis (siden angiver to forskellige datoer).
+- Ugens dagens ret står i https://viruphuset.dk/wp-content/uploads/2.pdf. PDF'en kunne ikke læses automatisk, så retternes navne er IKKE gengivet.
+
+### Stadig "[tjek med stedet]"
+Dagens rets navn, drikkevarepriser, åbningstider lørdag og søndag, priser og booking af lokaler, om Strik i Viruphuset og filmklubben kører nu og hvornår, stedets egne farver og alle billeder (pladsholdere). En søgning viste en anden mailfrist (kl. 08.00) og andre åbningstider end siden; siden er brugt, men skal tjekkes. Facebook (facebook.com/viruphuset) er ikke læst.

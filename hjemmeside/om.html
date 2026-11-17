@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Demo: om Viruphuset i Hjortshøj. Lavet af OviaSpecs. Ikke stedets officielle side.">
+<title>Om Viruphuset · Café V (demo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="hjem.css">
+</head>
+<body>
+<div class="demo" role="note">Demo · lavet af OviaSpecs til Café V – ikke deres officielle side</div>
+<a class="skip" href="#main">Hop til indhold</a>
+<div class="site">
+  <header class="nav">
+    <a class="logo" href="./" aria-label="Café V, forside">Café V</a>
+    <nav aria-label="Hovedmenu"><ul>
+      <li><a class="l" href="om.html" aria-current="page">Om huset</a></li>
+      <li><a class="btn" href="../index.html">Bestil <span aria-hidden="true">→</span></a></li>
+    </ul></nav>
+  </header>
+</div>
+
+<main id="main"><div class="site">
+  <div class="page-h"><p class="kicker">Hjortshøj</p><h1 id="h">Om <em>huset</em></h1></div>
+
+  <div class="ph r169" role="img" aria-label="Pladsholder til stedets eget billede" style="margin:10px 0 6px"><div class="in"><span>Jeres eget billede her</span></div></div>
+
+  <div class="stack">
+    <div class="note"><h2>Viruphuset</h2>
+      <p>Viruphuset ligger på Virupvej 73 i Hjortshøj og drives af Fonden Multihus Hjortshøj, en erhvervsdrivende fond med almennyttigt uddelingsformål.</p>
+      <p>Huset kan lejes til arrangementer. Priser og booking: <span class="tbd">[tjek med stedet]</span>. Kontakt huset på <a href="mailto:info@viruphuset.dk">info@viruphuset.dk</a>.</p></div>
+    <div class="note"><h2>Café V</h2>
+      <p>Caféen i huset laver dagens ret tirsdag til torsdag og har et fast kort med blandt andet salatbowle, paneret kylling med fritter, panini og hjemmebagt kage.</p>
+      <p>Den leverer også mad og drikke til private fester og andre arrangementer i huset. Skriv til <a href="mailto:cafe@viruphuset.dk">cafe@viruphuset.dk</a>.</p></div>
+    <div class="note"><h2>Strik i Viruphuset</h2>
+      <p>Onsdage kl. 10–12 i Café V. Det er gratis, og man behøver ikke at tilmelde sig. Caféen har åbent og sælger blandt andet kaffe og kage.</p>
+      <p class="note-src">Stedets egen side nævner to forskellige datoer for arrangementet. Tjek, om det kører nu: <span class="tbd">[tjek med stedet]</span>.</p></div>
+    <div class="note"><h2>Byens filmklub</h2>
+      <p>Viruphusets forside nævner "Hjorten – Byens filmklub". Tider og priser står ikke på siden: <span class="tbd">[tjek med stedet]</span>.</p></div>
+  </div>
+
+  <p class="note-src" style="margin-bottom:30px">Kilder: viruphuset.dk og viruphuset.dk/cafe-v/, hentet 17. november 2026. Arrangementer, koncerter og andet, der ikke stod der, er ikke taget med.</p>
+
+  <footer class="f">
+    <p>Demo · lavet af OviaSpecs til Café V – ikke deres officielle side. Ingen aftale.</p>
+    <p><a href="./">Forside</a> · <a href="../index.html">Bestil dagens ret (demo)</a> · <a href="../ejer.html">Køkkenets visning (demo)</a></p>
+  </footer>
+</div></main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.9/dist/lenis.min.js"></script>
+<script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
+<script>
+(function(){
+  if(typeof gsap==='undefined'||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  gsap.registerPlugin(ScrollTrigger);
+  if(typeof Lenis!=='undefined'){var l=new Lenis({duration:1.1});l.on('scroll',ScrollTrigger.update);gsap.ticker.add(function(t){l.raf(t*1000)});gsap.ticker.lagSmoothing(0);}
+  if(typeof SplitType!=='undefined'){var s=new SplitType('#h',{types:'chars'});gsap.from(s.chars,{yPercent:110,opacity:0,duration:1,ease:'expo.out',stagger:.04,delay:.1});}
+  gsap.utils.toArray('.stack .note').forEach(function(n){gsap.from(n,{y:40,opacity:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:n,start:'top 88%'}});});
+})();
+</script>
+</body>
+</html>
