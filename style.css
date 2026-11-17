@@ -138,3 +138,7 @@ label.lab{display:block;font-size:12px;font-weight:800;letter-spacing:.12em;text
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
+
+/* eksempelbilleder (ikke stedets egne) */
+.ph .in img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph .cap{position:absolute;left:0;bottom:0;z-index:3;background:var(--paper);color:var(--ink);font:600 11px/1.3 var(--f-b);padding:5px 9px;max-width:92%}

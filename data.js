@@ -23,6 +23,19 @@ window.CAFEV_DATA = {
     { navn: 'Hjemmebagt kage', note: '', pris: 15 },
     { navn: 'Fritter', note: '', pris: 35 }
   ],
+  // Koncerter i Viruphusets kultursal. Kilde: hvaderpaa.dk/da/spillested/viruphuset-hjortshoej/ (hentet 17. nov. 2026).
+  // Årstal står ikke på listen; de er udledt af ugedagene (fre 20.11. = 2026 osv.). "tjek": datoen passer ikke med ugedagen.
+  koncerter: [
+    { iso: '2026-11-20', dag: 'Fre', dato: '20.11.', tid: '20.00', navn: 'Augusta Schackinger', pris: 80,  url: 'https://hvaderpaa.dk/da/event/12214/' },
+    { iso: '2026-12-11', dag: 'Fre', dato: '11.12.', tid: '20.00', navn: 'Baby Did a Bad Thing', pris: 160, url: 'https://hvaderpaa.dk/da/event/12355/' },
+    { iso: '2026-12-12', dag: 'Lør', dato: '11.12.', tid: '20.00', navn: 'Nabiha · julekoncert', pris: 250, url: 'https://hvaderpaa.dk/da/event/35026/', tjek: true },
+    { iso: '2027-02-06', dag: 'Lør', dato: '6.2.',   tid: '20.00', navn: 'Sofia Hedia + Kom vi løber', pris: 160, url: 'https://hvaderpaa.dk/da/event/34194/' },
+    { iso: '2027-02-27', dag: 'Lør', dato: '27.2.',  tid: '20.00', navn: 'Tigeroak', pris: 160, url: 'https://hvaderpaa.dk/da/event/34570/' },
+    { iso: '2027-03-06', dag: 'Lør', dato: '6.3.',   tid: '20.00', navn: 'Tue West m. band', pris: 200, url: 'https://hvaderpaa.dk/da/event/23788/' },
+    { iso: '2027-03-19', dag: 'Fre', dato: '19.3.',  tid: '20.00', navn: 'Fenja', pris: 80,  url: 'https://hvaderpaa.dk/da/event/12536/' },
+    { iso: '2027-04-30', dag: 'Fre', dato: '30.4.',  tid: '20.00', navn: 'Charlotte Skadhauge m. band feat. Højlydt', pris: 160, url: 'https://hvaderpaa.dk/da/event/35022/' },
+    { iso: '2027-05-14', dag: 'Fre', dato: '14.5.',  tid: '20.00', navn: 'Ki!', pris: 180, url: 'https://hvaderpaa.dk/da/event/24405/' }
+  ],
   mailBestilling: 'cafe@viruphuset.dk',
   mailHuset: 'info@viruphuset.dk',
   telefon: '+4593838530',

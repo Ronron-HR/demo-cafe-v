@@ -45,6 +45,18 @@
   }).join('');
   function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
 
+  /* ---- næste koncert ---- */
+  var nk = $('#nk');
+  if (nk && D.koncerter) {
+    var todayIso = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
+    var nxt = D.koncerter.filter(function (k) { return k.iso >= todayIso; })[0];
+    if (nxt) {
+      $('#kont').textContent = nxt.navn;
+      $('#nkt').textContent = nxt.dag + ' ' + nxt.dato + ' kl. ' + nxt.tid + ' · ' + nxt.pris + ' kr.' + (nxt.tjek ? ' (dato: tjek med stedet)' : '');
+      nk.hidden = false;
+    }
+  }
+
   /* ---- animation ---- */
   if (!gs || reduce) return;
   if (window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);

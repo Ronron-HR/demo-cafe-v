@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Demo: koncerter i Viruphuset, Hjortshøj. Lavet af OviaSpecs. Ikke stedets officielle side.">
+<title>Koncerter i Viruphuset · Café V (demo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="hjem.css">
+<style>
+.cl{list-style:none;display:grid;gap:26px;padding:34px 0 20px}
+.tk{position:relative;background:var(--paper);padding:18px 16px 16px 16px;display:grid;grid-template-columns:auto 1fr;gap:4px 18px;align-items:end;box-shadow:0 2px 0 rgba(0,0,0,.15),0 16px 24px -12px rgba(0,0,0,.4);transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.tk:nth-child(odd){transform:rotate(-1.1deg);margin-right:14px}
+.tk:nth-child(even){transform:rotate(1.1deg);margin-left:14px}
+.tk:hover,.tk:focus-within{transform:rotate(0) translateY(-4px)}
+.tk:before{content:"";position:absolute;top:-11px;left:22px;width:64px;height:20px;background:rgba(188,56,32,.55);transform:rotate(-4deg)}
+.tk .d{grid-row:1/3;font:400 clamp(70px,21vw,104px)/.8 var(--f-d);letter-spacing:-.05em;color:var(--red);font-variant-numeric:tabular-nums}
+.tk h2{font:400 clamp(28px,8vw,40px)/1 var(--f-d);letter-spacing:-.02em}
+.tk .m{font-weight:800;font-size:14px}
+.tk .m .tbd{display:block}
+.tk a.link{grid-column:1/3;margin-top:6px}
+.tk.next{background:var(--ink);color:var(--paper)}
+.tk.next .d{color:var(--paper)}
+.tk.next a{color:var(--paper)}
+@media (min-width:900px){.cl{grid-template-columns:1fr 1fr;gap:34px 40px}}
+</style>
+</head>
+<body>
+<div class="demo" role="note">Demo · lavet af OviaSpecs til Café V – ikke deres officielle side</div>
+<a class="skip" href="#main">Hop til indhold</a>
+<div class="site">
+  <header class="nav">
+    <a class="logo" href="./" aria-label="Café V, forside">Café V</a>
+    <nav aria-label="Hovedmenu"><ul>
+      <li><a class="l" href="koncerter.html" aria-current="page">Koncerter</a></li>
+      <li><a class="l" href="om.html">Om huset</a></li>
+      <li><a class="btn" href="../index.html">Bestil <span aria-hidden="true">→</span></a></li>
+    </ul></nav>
+  </header>
+</div>
+
+<main id="main"><div class="site">
+  <div class="page-h"><p class="kicker">Kultursalen i Viruphuset</p><h1 id="h">Kon<em>certer</em></h1></div>
+  <p class="lead" style="font-weight:600;max-width:46ch;margin-top:8px">Huset har en kultursal til koncerter og arrangementer. Ifølge listen på hvaderpaa.dk er der 10–20 koncerter om året i samarbejde med Voxhall. Her er de kommende, vi kunne finde.</p>
+
+  <ol class="cl" id="cl" aria-label="Kommende koncerter"></ol>
+
+  <p class="note-src" style="margin-bottom:10px">Kilde: <a href="https://hvaderpaa.dk/da/spillested/viruphuset-hjortshoej/" rel="noopener" target="_blank">hvaderpaa.dk/spillested/viruphuset-hjortshoej</a>, hentet 17. november 2026. Listen angiver ikke årstal; de er udledt af ugedagene. Priser er som angivet på listen. Billetter og tilmelding: følg linket til hvaderpaa.dk eller spørg huset (<a href="mailto:info@viruphuset.dk">info@viruphuset.dk</a>). Programmet kan ændre sig: <span class="tbd">[tjek med stedet]</span>.</p>
+  <p class="note-src" style="margin-bottom:30px">Café V's egen side nævner ikke koncerter, og viruphuset.dk har ingen koncertliste. Det er uklart, om caféen har åbent før koncerter: <span class="tbd">[tjek med stedet]</span>.</p>
+
+  <footer class="f">
+    <p>Demo · lavet af OviaSpecs til Café V – ikke deres officielle side. Ingen aftale.</p>
+    <p><a href="./">Forside</a> · <a href="om.html">Om huset</a> · <a href="../index.html">Bestil dagens ret (demo)</a> · <a href="../ejer.html">Køkkenets visning (demo)</a></p>
+  </footer>
+</div></main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.9/dist/lenis.min.js"></script>
+<script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
+<script src="../data.js"></script>
+<script>
+(function(){
+  var D=window.CAFEV_DATA||{}, now=new Date();
+  var iso=now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0')+'-'+String(now.getDate()).padStart(2,'0');
+  function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+  var list=(D.koncerter||[]).filter(function(k){return k.iso>=iso});
+  document.getElementById('cl').innerHTML=list.length?list.map(function(k,i){
+    return '<li class="tk'+(i===0?' next':'')+'"><div class="d" aria-hidden="true">'+esc(k.dato.replace(/\.$/,''))+'</div>'+
+      '<div><h2>'+esc(k.navn)+'</h2><p class="m">'+esc(k.dag)+' '+esc(k.dato)+' kl. '+esc(k.tid)+' · '+esc(k.pris)+' kr.'+(k.tjek?'<span class="tbd">Datoen passer ikke med ugedagen i kilden: [tjek med stedet]</span>':'')+(i===0?'<span style="display:block">Næste koncert</span>':'')+'</p></div>'+
+      '<a class="link" href="'+esc(k.url)+'" rel="noopener" target="_blank">Se på hvaderpaa.dk ↗<span class="vh"> (åbner i nyt vindue)</span></a></li>';
+  }).join(''):'<li class="tk"><h2>Ingen kommende koncerter på listen</h2><p class="m"><span class="tbd">[tjek med stedet]</span></p></li>';
+
+  if(typeof gsap==='undefined'||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  gsap.registerPlugin(ScrollTrigger);
+  if(typeof Lenis!=='undefined'){var l=new Lenis({duration:1.1});l.on('scroll',ScrollTrigger.update);gsap.ticker.add(function(t){l.raf(t*1000)});gsap.ticker.lagSmoothing(0);}
+  if(typeof SplitType!=='undefined'){var s=new SplitType('#h',{types:'chars'});gsap.from(s.chars,{yPercent:110,opacity:0,duration:1,ease:'expo.out',stagger:.04,delay:.1});}
+  gsap.utils.toArray('.tk').forEach(function(n){gsap.from(n,{y:40,opacity:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:n,start:'top 90%'}});});
+})();
+</script>
+</body>
+</html>

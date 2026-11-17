@@ -41,3 +41,9 @@ Selvstændig demo-hjemmeside til Café V, bygget i samme retning (varm og taktil
 
 ### Stadig "[tjek med stedet]"
 Dagens rets navn, drikkevarepriser, åbningstider lørdag og søndag, priser og booking af lokaler, om Strik i Viruphuset og filmklubben kører nu og hvornår, stedets egne farver og alle billeder (pladsholdere). En søgning viste en anden mailfrist (kl. 08.00) og andre åbningstider end siden; siden er brugt, men skal tjekkes. Facebook (facebook.com/viruphuset) er ikke læst.
+
+### Tilføjet 17. november 2026 (billeder og koncertside)
+- `hjemmeside/koncerter.html`: kommende koncerter i Viruphusets kultursal, læst fra `data.js`. Kilde: https://hvaderpaa.dk/da/spillested/viruphuset-hjortshoej/ (en tredjepartsliste; viruphuset.dk har ingen koncertliste). Listen angiver ikke årstal; de er udledt af ugedagene. Nabiha-julekoncerten står som "lør 11.12.", men 11.12.2026 er en fredag, så datoen er markeret [tjek med stedet]. Forsiden viser "Næste koncert".
+- Fra samme liste (hvaderpaa.dk): huset er på 2.500 m² på to etager med hal, fitness, kultursal og Café V, og 10–20 koncerter om året sammen med Voxhall. Husets åbningstider (08–22) er IKKE brugt, fordi de kun står på tredjepartslisten.
+- Strik i Viruphuset: onsdage 10–12 fra 18. nov. 2026 til 3. feb. 2027 ifølge stedets liste.
+- Billeder i `img/` er EKSEMPELBILLEDER fra Unsplash (Unsplash License, gratis at bruge): `cafe-interior.jpg` (Kouji Tsuru), `kage-kaffe.jpg` (Branimir Petakov). De er ikke Café V's egne og er mærket på siden. Udskift dem med stedets egne fotos (med tilladelse), før demoen bruges som andet end et udkast. Ingen af billederne er taget fra viruphuset.dk eller Facebook.
