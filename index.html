@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Café V · Dagens ret (demo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="demo" role="note">Demo · lavet af OviaSpecs til Café V · ikke deres officielle side</div>
+
+<main id="main">
+  <div class="wrap">
+    <section class="hero" aria-labelledby="ttl">
+      <div class="day" id="day" aria-hidden="true">tirsdag</div>
+      <div class="poster" id="poster">
+        <p class="kicker">Dagens ret · serveres 16.30</p>
+        <h1 id="ttl">[Dagens<br><em>ret</em>]</h1>
+        <div class="ph" role="img" aria-label="Pladsholder til stedets eget billede"><div class="in" id="phin"><span>Jeres eget billede her</span></div></div>
+        <div class="stamp">Bestil før 12.00</div>
+      </div>
+      <div id="open">
+        <div class="timer" style="margin-top:34px"><b id="cd" aria-live="off">0:00</b><small>Bestillingen lukker om<br><span id="cdtxt"></span></small></div>
+        <div class="ctawrap" style="margin-top:0"><button class="btn" id="start" type="button">Bestil en portion <span aria-hidden="true">→</span></button></div>
+      </div>
+      <p class="closedmsg" id="closed" hidden>Bestillingen er lukket for i dag – vi ses i morgen.</p>
+    </section>
+  </div>
+
+  <div class="marquee" aria-hidden="true"><div id="mq"><em>Bestil</em> inden 12 · ét spørgsmål ad gangen · ingen telefon · <em>Bestil</em> inden 12 · ét spørgsmål ad gangen · ingen telefon · <em>Bestil</em> inden 12 · ét spørgsmål ad gangen · ingen telefon ·</div></div>
+
+  <div class="wrap">
+    <section class="how" id="how" aria-labelledby="h2how">
+      <h2 id="h2how">Sådan <em style="color:var(--red)">virker</em> det</h2>
+      <div class="step"><span class="n" aria-hidden="true">1</span><p>Du siger, hvor mange I bliver, og om nogen har allergi eller spiser vegetar.</p></div>
+      <div class="step"><span class="n" aria-hidden="true">2</span><p>Du skriver dit navn. Det er hele bestillingen.</p></div>
+      <div class="step"><span class="n" aria-hidden="true">3</span><p>Køkkenet ser én samlet liste, der tæller sig selv sammen. Ret dit antal, indtil kl. 12.</p></div>
+    </section>
+
+    <section class="kitchen" aria-labelledby="h2k">
+      <h2 id="h2k">Køkkenet ved, hvad der sker</h2>
+      <div class="bignum" id="bn" aria-label="Portioner i dag">0</div>
+      <p>portioner i dag – talt sammen af sig selv, uden mails og håndskrevne lister.</p>
+      <a class="btn ink" href="ejer.html">Se køkkenets liste <span aria-hidden="true">→</span></a>
+    </section>
+
+    <footer>
+      <p><strong>Café V · Viruphuset</strong><br>Virupvej 73, 8530 Hjortshøj<br>Drives af Fonden Multihus Hjortshøj</p>
+      <p>Åbningstider og pris på dagens ret: [tjek med stedet]</p>
+      <p>Alt på siden er en demo uden aftale. Ingen rigtige bestillinger sendes.</p>
+      <p><button class="link" id="simbtn" type="button">Demo-tid: rigtigt ur</button> · <button class="link" id="reset" type="button">Nulstil demo</button></p>
+    </section>
+  </div>
+</main>
+
+<div id="flow" hidden role="dialog" aria-modal="true" aria-label="Bestil dagens ret">
+  <div class="fbar">
+    <button class="ibtn" id="back" type="button">← Tilbage</button>
+    <svg class="plate" viewBox="0 0 64 64" role="img" aria-label="Tallerken, der fyldes, jo flere trin du har gennemført" id="plate">
+      <circle class="rim" cx="32" cy="32" r="29"/><circle class="rim2" cx="32" cy="32" r="22"/>
+      <circle class="food" id="food" cx="32" cy="32" r="20" style="transform:scale(.2)"/>
+    </svg>
+    <button class="ibtn" id="close" type="button" aria-label="Luk">Luk ✕</button>
+  </div>
+  <div class="fbody" id="fbody" aria-live="polite"></div>
+  <div class="fbar2"><div class="err" id="err" role="alert"></div><button class="btn" id="next" type="button">Videre <span aria-hidden="true">→</span></button></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.9/dist/lenis.min.js"></script>
+<script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
+<script src="shared.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

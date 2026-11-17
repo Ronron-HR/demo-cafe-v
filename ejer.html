@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Café V · I dag (demo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="ejer">
+<div class="demo" role="note">Demo · lavet af OviaSpecs til Café V · ikke deres officielle side</div>
+<main class="wrap" id="main">
+  <p class="kicker" style="margin-top:20px"><a href="index.html">← Kundesiden</a></p>
+  <h1 class="eh" id="eh">I dag</h1>
+  <div class="tot"><b id="tot" aria-live="polite">0</b><span>portioner<br>i dag</span></div>
+  <div class="split" id="split"></div>
+  <div id="warn"></div>
+  <button class="btn ink" id="closebtn" type="button">Luk bestilling</button>
+
+  <h2 class="sub">Henvendelser</h2>
+  <div id="orders"></div>
+
+  <div class="klist"><h2>Køkkenliste</h2><ul id="klist"></ul></div>
+  <p style="font-size:13px"><button class="link" id="reset" type="button">Nulstil demo</button> · Eksempler er falske demo-data (navne med "(demo)").</p>
+</main>
+<script src="shared.js"></script>
+<script src="ejer.js"></script>
+</body>
+</html>
